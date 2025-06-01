@@ -29,7 +29,7 @@ const Nav = () => {
         >
             {/* Logo */}
             <div className="text-2xl font-bold text-purple-700">
-                Otilla.Folio
+                Otilla.Portfolio
             </div>
 
             {/* Hamburger Icon */}

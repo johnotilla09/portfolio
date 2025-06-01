@@ -57,7 +57,7 @@ function App() {
                                 <i className="fab fa-github text-xl"></i>
                             </a>
                             <a
-                                href="#"
+                                href="https://www.linkedin.com/in/john-otilla-8867b5270/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-purple-600 hover:text-purple-800 transition-colors"
@@ -65,7 +65,7 @@ function App() {
                                 <i className="fab fa-linkedin text-xl"></i>
                             </a>
                             <a
-                                href="#"
+                                href="https://www.facebook.com/john.otilla/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="text-purple-600 hover:text-purple-800 transition-colors"

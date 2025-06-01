@@ -25,7 +25,19 @@ import postman_tech_stack from "../assets/tect-stacks/postman.svg";
 import mysql_tech_stack from "../assets/tect-stacks/mysql.svg";
 import sqlite_tech_stack from "../assets/tect-stacks/sqlite.svg";
 
+import resume from "../assets/resume/John_Otilla_Resume.pdf";
+
 const Home = () => {
+    const handleDonwloadResume = () => {
+        const resumeUrl = resume; // Put your resume file in the public folder
+        const link = document.createElement("a");
+        link.href = resumeUrl;
+        link.download = "John-Otilla-Resume.pdf";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
+
     return (
         <div>
             <div className="flex lg:flex-row flex-col lg:h-screen">
@@ -52,7 +64,7 @@ const Home = () => {
                             </p>
                         </div>
                         <div>
-                            <Button>
+                            <Button onClick={handleDonwloadResume}>
                                 {" "}
                                 Download Resume{" "}
                                 <i className="fa-solid fa-download"></i>
