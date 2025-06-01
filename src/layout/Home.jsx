@@ -120,7 +120,7 @@ const Home = () => {
                     <AnimatedSection>
                         <div className="flex items-center justify-center gap-8">
                             <div className="h-[2px] w-10 md:w-50 bg-purple-700 border-r-8"></div>
-                            <h2 className="text-3xl md:text-4xl">
+                            <h2 className="text-2xl md:text-4xl">
                                 Tech{" "}
                                 <span className="font-bold text-purple-700">
                                     Stacks
@@ -283,7 +283,6 @@ const Home = () => {
                                             title={"Postman"}
                                         />
                                     </AnimatedSection>
-                                    s
                                 </div>
                             </div>
                         </div>
