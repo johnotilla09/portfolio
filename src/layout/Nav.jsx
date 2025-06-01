@@ -7,7 +7,7 @@ const Nav = () => {
 
     const menuItems = [
         { label: "Home" },
-        { label: "Projects" },
+        // { label: "Projects" },
         // { label: "Certificates" },
     ];
 
