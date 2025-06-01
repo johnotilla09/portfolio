@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import Nav from "./layout/nav";
+import Nav from "./layout/Nav";
 import Home from "./layout/Home";
 
 function App() {
