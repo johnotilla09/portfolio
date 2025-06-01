@@ -23,7 +23,7 @@ const Nav = () => {
     }, [menuOpen]);
 
     return (
-        <nav
+        <div
             id="main-nav"
             className="flex justify-between items-center px-8 py-4 relative z-50"
         >
@@ -110,7 +110,7 @@ const Nav = () => {
                     </Link>
                 ))}
             </div>
-        </nav>
+        </div>
     );
 };
 
