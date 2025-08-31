@@ -310,17 +310,18 @@ const Home = () => {
                                 <div className="mb-10 ml-6">
                                     <div className="absolute w-6 h-6 bg-purple-700 rounded-full -left-[14px] border-4 border-white"></div>
                                     <h3 className="text-xl font-bold text-purple-700">
-                                        Software Developer @ ABC Corp
+                                        Full Stack @ BUCS, Research
+                                        Coordinator's Office
                                     </h3>
                                     <span className="text-sm text-gray-500">
-                                        2022 - Present
+                                        2025 - Present
                                     </span>
                                     <p className="mt-2 text-gray-700 text-justify">
-                                        Worked on developing full-stack web
-                                        applications using Laravel, React, and
-                                        MySQL. Improved system performance by
-                                        30% and led a small team of 3 junior
-                                        developers.
+                                        Developed and maintained BUCS-RDMS,
+                                        created BUCS-EDMS (Extension Document
+                                        Management System), provided technical
+                                        support, and managed research data and
+                                        administrative tasks.
                                     </p>
                                 </div>
                             </AnimatedSection>
@@ -329,17 +330,18 @@ const Home = () => {
                                 <div className="mb-10 ml-6">
                                     <div className="absolute w-6 h-6 bg-purple-700 rounded-full -left-[14px] border-4 border-white"></div>
                                     <h3 className="text-xl font-bold text-purple-700">
-                                        Web Developer Intern @ XYZ Solutions
+                                        Web Developer Intern @ BUCS, Research
+                                        Coordinator's Office
                                     </h3>
                                     <span className="text-sm text-gray-500">
-                                        2021 - 2022
+                                        February 2024 - May 2024
                                     </span>
                                     <p className="mt-2 text-gray-700 text-justify">
-                                        Assisted in creating REST APIs with
-                                        CodeIgniter and contributed to frontend
-                                        development using Bootstrap and
-                                        JavaScript. Learned agile methodologies
-                                        and Git collaboration.
+                                        Assisted in updating and testing the
+                                        RDMS management system, uploading files,
+                                        and coordinating with the mentor for the
+                                        research write shop to ensure its full
+                                        usability for faculty and students.
                                     </p>
                                 </div>
                             </AnimatedSection>
@@ -348,16 +350,18 @@ const Home = () => {
                                 <div className="ml-6">
                                     <div className="absolute w-6 h-6 bg-purple-700 rounded-full -left-[14px] border-4 border-white"></div>
                                     <h3 className="text-xl font-bold text-purple-700">
-                                        Freelance Projects
+                                        Computer Technician Immersion @ Denver's
+                                        Computer Shoppe Inc.
                                     </h3>
                                     <span className="text-sm text-gray-500">
-                                        2019 - 2021
+                                        February 2020
                                     </span>
                                     <p className="mt-2 text-gray-700 text-justify">
-                                        Built small business websites and
-                                        e-commerce platforms using PHP, Laravel,
-                                        and Tailwind CSS. Focused on responsive
-                                        design and client satisfaction.
+                                        Assembled and configured computer
+                                        systems and networks, installed
+                                        operating systems and software, and
+                                        diagnosed and repaired hardware and
+                                        software issues.
                                     </p>
                                 </div>
                             </AnimatedSection>
