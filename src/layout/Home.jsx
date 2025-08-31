@@ -4,6 +4,8 @@ import AnimatedSection from "../components/Animation.jsx/AnimatedSection";
 import Button from "../components/Buttons/Button";
 import Card from "../components/Cards/Card";
 
+import { motion } from "framer-motion";
+
 import photo from "../assets/svg/photo.svg";
 import laravel_logo from "../assets/svg/laravel.svg";
 import codeigniter_logo from "../assets/svg/codeigniter.svg";
@@ -24,6 +26,7 @@ import git_tech_stack from "../assets/tect-stacks/git.svg";
 import postman_tech_stack from "../assets/tect-stacks/postman.svg";
 import mysql_tech_stack from "../assets/tect-stacks/mysql.svg";
 import sqlite_tech_stack from "../assets/tect-stacks/sqlite.svg";
+// import firebase_tech_stack from "../assets/tect-stacks/firebase.png";
 
 import resume from "../assets/resume/John_Otilla_Resume.pdf";
 
@@ -54,13 +57,11 @@ const Home = () => {
                                 </span>
                             </h3>
                             <p className="text-lg md:text-xl text-gray-700 text-justify">
-                                A passionate software and web developer with a
-                                solid foundation in web development and hands-on
-                                experience in building and maintaining
-                                real-world applications. Committed to writing
-                                clean, efficient code and continuously learning
-                                new technologies to deliver scalable and
-                                effective software solutions.
+                                I love turning ideas into real, working web
+                                apps. Whether it’s building from scratch or
+                                improving what’s already there, I enjoy solving
+                                problems with clean code and modern tools.
+                                Always learning, always creating.
                             </p>
                         </div>
                         <div>
@@ -76,7 +77,7 @@ const Home = () => {
                 <div className="flex-1 h-screen flex items-center justify-center p-4 md:p-10 gap-4">
                     <AnimatedSection>
                         <div className="relative">
-                            <div className="absolute transform translate-x-[-10%] translate-y-[-14%] left-[13%] top-[10%] sm:top-[17%] md:top-[15%] md:left-[19%] lg:top-[13%] lg:left-[15%] z-50">
+                            {/* <div className="absolute transform translate-x-[-10%] translate-y-[-14%] left-[13%] top-[10%] sm:top-[17%] md:top-[15%] md:left-[19%] lg:top-[13%] lg:left-[15%] z-50">
                                 <img
                                     src={laravel_logo}
                                     alt="Laravel"
@@ -102,7 +103,7 @@ const Home = () => {
                                     width={60}
                                     className="sm:h-[90px] sm:w-[90px] animate-bounce"
                                 />
-                            </div>
+                            </div> */}
                             <div>
                                 <img
                                     src={photo}
@@ -285,6 +286,81 @@ const Home = () => {
                                     </AnimatedSection>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+
+                    {/* Work Experience Roadmap Section */}
+                    <div className="py-16 px-6">
+                        <AnimatedSection>
+                            <div className="flex items-center justify-center gap-8">
+                                <div className="h-[2px] w-10 md:w-50 bg-purple-700 border-r-8"></div>
+                                <h2 className="text-2xl md:text-4xl">
+                                    Work{" "}
+                                    <span className="font-bold text-purple-700">
+                                        Experiences
+                                    </span>
+                                </h2>
+                                <div className="h-[2px] w-10 md:w-50 bg-purple-700 border-r-8"></div>
+                            </div>
+                        </AnimatedSection>
+
+                        <div className="mt-12 relative border-l-4 border-purple-700 pl-6">
+                            {/* Example Experience Item */}
+                            <AnimatedSection>
+                                <div className="mb-10 ml-6">
+                                    <div className="absolute w-6 h-6 bg-purple-700 rounded-full -left-[14px] border-4 border-white"></div>
+                                    <h3 className="text-xl font-bold text-purple-700">
+                                        Software Developer @ ABC Corp
+                                    </h3>
+                                    <span className="text-sm text-gray-500">
+                                        2022 - Present
+                                    </span>
+                                    <p className="mt-2 text-gray-700 text-justify">
+                                        Worked on developing full-stack web
+                                        applications using Laravel, React, and
+                                        MySQL. Improved system performance by
+                                        30% and led a small team of 3 junior
+                                        developers.
+                                    </p>
+                                </div>
+                            </AnimatedSection>
+
+                            <AnimatedSection>
+                                <div className="mb-10 ml-6">
+                                    <div className="absolute w-6 h-6 bg-purple-700 rounded-full -left-[14px] border-4 border-white"></div>
+                                    <h3 className="text-xl font-bold text-purple-700">
+                                        Web Developer Intern @ XYZ Solutions
+                                    </h3>
+                                    <span className="text-sm text-gray-500">
+                                        2021 - 2022
+                                    </span>
+                                    <p className="mt-2 text-gray-700 text-justify">
+                                        Assisted in creating REST APIs with
+                                        CodeIgniter and contributed to frontend
+                                        development using Bootstrap and
+                                        JavaScript. Learned agile methodologies
+                                        and Git collaboration.
+                                    </p>
+                                </div>
+                            </AnimatedSection>
+
+                            <AnimatedSection>
+                                <div className="ml-6">
+                                    <div className="absolute w-6 h-6 bg-purple-700 rounded-full -left-[14px] border-4 border-white"></div>
+                                    <h3 className="text-xl font-bold text-purple-700">
+                                        Freelance Projects
+                                    </h3>
+                                    <span className="text-sm text-gray-500">
+                                        2019 - 2021
+                                    </span>
+                                    <p className="mt-2 text-gray-700 text-justify">
+                                        Built small business websites and
+                                        e-commerce platforms using PHP, Laravel,
+                                        and Tailwind CSS. Focused on responsive
+                                        design and client satisfaction.
+                                    </p>
+                                </div>
+                            </AnimatedSection>
                         </div>
                     </div>
                 </div>

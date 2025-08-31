@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, Link, NavLink } from "react-router-dom";
 
 const Nav = () => {
     const [activeIndex, setActiveIndex] = useState(0);
@@ -7,7 +7,8 @@ const Nav = () => {
 
     const menuItems = [
         { label: "Home" },
-        // { label: "Projects" },
+        { label: "Projects" },
+        { label: "Contact   " },
         // { label: "Certificates" },
     ];
 
@@ -29,7 +30,7 @@ const Nav = () => {
         >
             {/* Logo */}
             <div className="text-2xl font-bold text-purple-700">
-                Otilla.Portfolio
+                My Portfolio
             </div>
 
             {/* Hamburger Icon */}
@@ -67,24 +68,27 @@ const Nav = () => {
             <ul className="hidden lg:flex space-x-10 items-center">
                 {menuItems.map((item, idx) => (
                     <li key={item.label} className="relative">
-                        <Link
+                        <NavLink
                             to={`/${item.label}`}
                             onClick={() => setActiveIndex(idx)}
-                            className={`font-bold transition-colors duration-300 cursor-pointer ${
-                                activeIndex === idx
-                                    ? "text-purple-700"
-                                    : "text-black hover:text-purple-700"
-                            }`}
+                            className={({ isActive }) => `
+                                font-bold transition-colors duration-300 cursor-pointer
+                                ${
+                                    isActive
+                                        ? "text-purple-700"
+                                        : "text-black hover:text-purple-700"
+                                }
+                            `}
                         >
                             {item.label}
                             <span
-                                className={`absolute left-0 -bottom-1 h-1 w-full bg-purple-300 rounded transition-transform duration-300 origin-left ${
-                                    activeIndex === idx
-                                        ? "scale-x-100"
-                                        : "scale-x-0"
-                                }`}
+                                className={({ isActive }) => `
+                                    absolute left-0 -bottom-1 h-1 w-full bg-purple-300 rounded 
+                                    transition-transform duration-300 origin-left
+                                    ${isActive ? "scale-x-100" : "scale-x-0"}
+                                `}
                             />
-                        </Link>
+                        </NavLink>
                     </li>
                 ))}
             </ul>
@@ -96,7 +100,7 @@ const Nav = () => {
                 }`}
             >
                 {menuItems.map((item, idx) => (
-                    <Link
+                    <NavLink
                         to={`/${item.label}`}
                         key={item.label}
                         onClick={() => setActiveIndex(idx)}
@@ -107,7 +111,7 @@ const Nav = () => {
                         }`}
                     >
                         {item.label}
-                    </Link>
+                    </NavLink>
                 ))}
             </div>
         </div>

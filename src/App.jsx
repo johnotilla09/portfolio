@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import "./App.css";
 import Nav from "./layout/Nav";
 import Home from "./layout/Home";
+import Project from "./layout/Project";
+import Contact from "./layout/Contact";
+// import Project from "./layout/Project";
 
 function App() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -34,16 +37,20 @@ function App() {
             {/* Fixed Nav */}
 
             {/* Main Content with padding to offset fixed nav */}
-            <div className="px-4 md:px-10 lg:px-40 pt-5 mt-20 lg:mt-0">
+            <div className="px-4 md:px-10 lg:px-15 pt-5 mt-20 lg:mt-0">
                 <Routes>
-                    <Route path="/" element={<Home />}>
-                        <Route path="/Home" element={<Home />} />
-                    </Route>
+                    <Route path="/Home" element={<Home />} />
+                    <Route path="/Projects" element={<Project />} />
+                    <Route path="/Contact" element={<Contact />} />
+                    <Route
+                        path="*"
+                        element={<Navigate replace to="/Home" />}
+                    ></Route>
                 </Routes>
             </div>
 
             {/* Footer */}
-            <footer className="px-4 md:px-10 lg:px-40 py-12 bg-gradient-to-r from-purple-100 to-purple-50 mt-20">
+            <footer className="px-4 md:px-10 lg:px-40 py-12 from-purple-100 to-purple-50 mt-20">
                 <div className="container mx-auto">
                     <div className="flex flex-col items-center gap-4">
                         {/* Social Links */}
@@ -85,25 +92,6 @@ function App() {
                     </div>
                 </div>
             </footer>
-
-            {/* Animation keyframes */}
-            <style>
-                {`
-                @keyframes slideDown {
-                    0% {
-                        transform: translateY(-100%);
-                        opacity: 0;
-                    }
-                    100% {
-                        transform: translateY(0);
-                        opacity: 1;
-                    }
-                }
-                .animate-slideDown {
-                    animation: slideDown 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-                }
-                `}
-            </style>
         </>
     );
 }
