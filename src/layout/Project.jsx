@@ -31,6 +31,9 @@ import KMeans1 from "../assets/projects-photo/KMeans/KMeans1.png";
 import Linear1 from "../assets/projects-photo/LinearRegression/Linear1.png";
 import CapShape from "../assets/projects-photo/NaiveBayes/CapShape.png";
 import OtillaInventory1 from "../assets/projects-photo/OtillaInventory/OtillaInventory1.png";
+import Portfolio1 from "../assets/projects-photo/Portfolio/Portfolio1.png";
+import CushyRental1 from "../assets/projects-photo/CushyRental/CushyRental1.png";
+import BUCSRDMS1 from "../assets/projects-photo/BUCS-RDMS/BUCS-RDMS1.png";
 
 import { motion } from "framer-motion";
 // project list with categories
@@ -108,6 +111,33 @@ const projects = [
         description:
             "A simple system for managing and tracking feed stocks and sales.",
         tags: [vbnet],
+        category: "personal",
+    },
+
+    {
+        imageUrl: Portfolio1,
+        title: "My Portfolio",
+        description:
+            "A personal portfolio website built with React, Tailwind CSS, and Vite.",
+        tags: [react, tailwind],
+        category: "personal",
+    },
+
+    {
+        imageUrl: CushyRental1,
+        title: "CushyRental App: A Boarding House Finder",
+        description:
+            "A mobile based app for finding and securing boarding houses.",
+        tags: [react, html, css, laravel, mysql],
+        category: "personal",
+    },
+
+    {
+        imageUrl: BUCSRDMS1,
+        title: "BUCS-RDMS",
+        description:
+            "A web system for managing and tracking BUCS research documents.",
+        tags: [html, css, codeigniter, js, mysql],
         category: "personal",
     },
 ];

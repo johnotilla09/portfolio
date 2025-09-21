@@ -32,7 +32,7 @@ const Card = ({ imageUrl, title, description, tags, className }) => {
             {/* Image */}
             <div className="flex flex-col items-center justify-center h-[180px]">
                 <img
-                    className="w-full h-full object-cover"
+                    className="w-full h-auto object-cover"
                     src={imageUrl}
                     alt={title}
                     width={221}
@@ -41,14 +41,12 @@ const Card = ({ imageUrl, title, description, tags, className }) => {
             </div>
 
             {/* Content */}
-            <div className="py-4 text-center px-4 overflow-auto">
+            <div className="pb-4 px-4 overflow-auto">
                 <div>
-                    <h3 className="text-gray-800 text-2xl mb-2 font-semibold">
+                    <h3 className="text-gray-800 text-2xl mb-2 font-semibold text-center">
                         {title}
                     </h3>
-                    <p className="text-gray-600 text-base text-justify">
-                        {description}
-                    </p>
+                    <p className="text-gray-600 text-base">{description}</p>
                 </div>
 
                 <div className="flex gap-3 h-auto mt-2.5">

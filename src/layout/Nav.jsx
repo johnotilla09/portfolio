@@ -8,7 +8,7 @@ const Nav = () => {
     const menuItems = [
         { label: "Home" },
         { label: "Projects" },
-        { label: "Contact   " },
+        { label: "Contact" },
         // { label: "Certificates" },
     ];
 
@@ -103,12 +103,15 @@ const Nav = () => {
                     <NavLink
                         to={`/${item.label}`}
                         key={item.label}
-                        onClick={() => setActiveIndex(idx)}
-                        className={`text-left font-bold transition-colors duration-300 ${
-                            activeIndex === idx
-                                ? "text-purple-700"
-                                : "text-black hover:text-purple-700"
-                        }`}
+                        onClick={() => setMenuOpen(false)}
+                        className={({ isActive }) => `
+                                font-bold transition-colors duration-300 cursor-pointer
+                                ${
+                                    isActive
+                                        ? "text-purple-700"
+                                        : "text-black hover:text-purple-700"
+                                }
+                            `}
                     >
                         {item.label}
                     </NavLink>

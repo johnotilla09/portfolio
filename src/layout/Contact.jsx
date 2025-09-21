@@ -1,12 +1,28 @@
-"use client";
 import React, { useState } from "react";
+// import emailjs from "@emailjs/browser";
+import UseEmail from "../hooks/UseEmail";
+import AnimatedSection from "../components/Animation.jsx/AnimatedSection";
 
-export default function Contact() {
+const Contact = () => {
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+    const title = "New Message";
+
+    // console.log(publicKey);
+
     const [formData, setFormData] = useState({
         name: "",
         email: "",
         message: "",
+        title: title,
     });
+
+    const { sendEmail, loading, error, success } = UseEmail(
+        serviceId,
+        templateId,
+        publicKey
+    );
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -14,17 +30,22 @@ export default function Contact() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log("Form submitted:", formData);
-        // 🚀 Replace with your backend/email service (EmailJS, Laravel API, etc.)
+
+        // send email
+        sendEmail(formData);
+
+        // Reset form
+        setFormData({
+            name: "",
+            email: "",
+            message: "",
+            title: title, // keep same title
+        });
     };
 
     return (
-        // for darkmode
-        // dark:to-gray-800
-        // dark:text-purple-400 mb-8
-        // from-purple-50 to-purple-100
-        <section className="py-16 bg-gradient-to-r ">
-            <div className="max-w-4xl mx-auto px-6">
+        <section className="py-16">
+            <AnimatedSection className="max-w-4xl mx-auto px-6">
                 <h2 className="text-3xl font-bold text-center text-purple-700 dark:text-purple-400 mb-8">
                     Get in Touch
                 </h2>
@@ -86,12 +107,52 @@ export default function Contact() {
                         <button
                             type="submit"
                             className="px-6 py-3 rounded-xl bg-purple-700 hover:bg-purple-800 text-white font-semibold shadow-md transition transform hover:scale-105"
+                            disabled={loading}
                         >
-                            Send Message
+                            {loading ? (
+                                <div className="flex items-center">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            fill="none"
+                                            stroke="currentColor"
+                                            strokeDasharray="16"
+                                            strokeDashoffset="16"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth="2"
+                                            d="M12 3c4.97 0 9 4.03 9 9"
+                                        >
+                                            <animate
+                                                fill="freeze"
+                                                attributeName="stroke-dashoffset"
+                                                dur="0.2s"
+                                                values="16;0"
+                                            />
+                                            <animateTransform
+                                                attributeName="transform"
+                                                dur="1.5s"
+                                                repeatCount="indefinite"
+                                                type="rotate"
+                                                values="0 12 12;360 12 12"
+                                            />
+                                        </path>
+                                    </svg>
+                                    <span className="ml-2">Sending</span>
+                                </div>
+                            ) : (
+                                "Send Message"
+                            )}
                         </button>
                     </div>
                 </form>
-            </div>
+            </AnimatedSection>
         </section>
     );
-}
+};
+
+export default Contact;

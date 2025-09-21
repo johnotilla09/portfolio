@@ -310,7 +310,7 @@ const Home = () => {
                                 <div className="mb-10 ml-6">
                                     <div className="absolute w-6 h-6 bg-purple-700 rounded-full -left-[14px] border-4 border-white"></div>
                                     <h3 className="text-xl font-bold text-purple-700">
-                                        Full Stack @ BUCS, Research
+                                        Full Stack Developer @ BUCS, Research
                                         Coordinator's Office
                                     </h3>
                                     <span className="text-sm text-gray-500">

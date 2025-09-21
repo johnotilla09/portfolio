@@ -5,24 +5,32 @@ import Nav from "./layout/Nav";
 import Home from "./layout/Home";
 import Project from "./layout/Project";
 import Contact from "./layout/Contact";
-// import Project from "./layout/Project";
 
 function App() {
     const [isScrolled, setIsScrolled] = useState(false);
+    const [showBackToTop, setShowBackToTop] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
             const scrollPosition = window.scrollY;
-            if (scrollPosition > 0) {
-                setIsScrolled(true);
-            } else {
-                setIsScrolled(false);
-            }
+
+            // Navbar background change
+            setIsScrolled(scrollPosition > 0);
+
+            // Show back to top button after scrolling 200px
+            setShowBackToTop(scrollPosition > 200);
         };
 
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
+
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    };
 
     return (
         <>
@@ -92,6 +100,68 @@ function App() {
                     </div>
                 </div>
             </footer>
+
+            {/* Back to Top Button */}
+            {showBackToTop && (
+                <button
+                    onClick={scrollToTop}
+                    className="fixed bottom-6 right-6 p-1 rounded-full bg-purple-600/80 backdrop-blur-md text-white shadow-lg hover:bg-purple-700 hover:scale-110 transition duration-300 ease-in-out animate-bounce cursor-pointer"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="35"
+                        height="35"
+                        viewBox="0 0 24 24"
+                    >
+                        <g
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                        >
+                            <path
+                                stroke-dasharray="64"
+                                stroke-dashoffset="64"
+                                d="M12 21c4.97 0 9 -4.03 9 -9c0 -4.97 -4.03 -9 -9 -9c-4.97 0 -9 4.03 -9 9c0 4.97 4.03 9 9 9Z"
+                            >
+                                <animate
+                                    fill="freeze"
+                                    attributeName="stroke-dashoffset"
+                                    dur="0.6s"
+                                    values="64;0"
+                                />
+                            </path>
+                            <path
+                                stroke-dasharray="12"
+                                stroke-dashoffset="12"
+                                d="M12 17l0 -9.5"
+                            >
+                                <animate
+                                    fill="freeze"
+                                    attributeName="stroke-dashoffset"
+                                    begin="0.7s"
+                                    dur="0.2s"
+                                    values="12;0"
+                                />
+                            </path>
+                            <path
+                                stroke-dasharray="8"
+                                stroke-dashoffset="8"
+                                d="M12 7l4 4M12 7l-4 4"
+                            >
+                                <animate
+                                    fill="freeze"
+                                    attributeName="stroke-dashoffset"
+                                    begin="0.9s"
+                                    dur="0.2s"
+                                    values="8;0"
+                                />
+                            </path>
+                        </g>
+                    </svg>
+                </button>
+            )}
         </>
     );
 }
